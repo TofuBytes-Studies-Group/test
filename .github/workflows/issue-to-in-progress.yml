@@ -1,0 +1,19 @@
+name: Issue to In Progress
+
+on:
+  issues:
+    types: [opened, edited]
+
+
+
+jobs:
+    move_issue_to_in_progress:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Move issue to in progress
+              run: |
+                gh project item-edit --project-id 3 --id $issue_number --set-column "In Progress"
+              env:
+                issue_number: ${{ github.event.issue.number }}
+
+
