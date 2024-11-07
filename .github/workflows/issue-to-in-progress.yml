@@ -2,7 +2,7 @@ name: Issue to In Progress
 
 on:
   issues:
-    types: [opened, edited]
+    types: [assigned]
 
 
 
